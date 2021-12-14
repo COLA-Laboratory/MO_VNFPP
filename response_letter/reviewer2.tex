@@ -1,0 +1,65 @@
+% !TeX root = responseletter.tex
+
+\noindent\textbf{--\ Response to Reviewer $\sharp2$}\\
+
+\textsf{This paper proposes a multi-objective optimization model for "Virtual Network Function Placement", and introduces an evolutionary algorithm to solve such a problem.}\\
+
+\textsf{Some key information is missing, which makes it difficult to assess the correctness of the theoretical analysis (Appendices are not downloadable)}
+
+\textcolor{blue}{\textbf{\textit{Reply}: We apologize for this mistake. The link to the appendix has now been corrected.}}\\
+
+\textsf{In addition, I found this paper is not quite fitted to the scope of IEEE Trans Cybernetics.}
+
+\textcolor{blue}{\textbf{\textit{Reply}: We thank the reviewer for this comment. We believe that this paper is well suited to this journal. The IEEE Transactions on Cybernetics has published many works on evolutionary algorithms and other metaheuristics (e.g. \cite{TODO}) and on data center optimization tasks (e.g. \cite{TODO}). This work is a synthesis of these two topics and hence is within the scope of this journal. To further reflect the relevance of our work, we have updated our manuscript throughout to replace existing references to papers published in Transactions on Cybernetics where appropriate.}}\\
+
+% TTSA: An Effective Scheduling Approach for Delay Bounded Tasks in Hybrid Clouds
+% Multiobjective Cloud Workflow Scheduling: A Multiple Populations Ant Colony System Approach
+% Transforming Cooling Optimization for Green Data Center via Deep Reinforcement Learning
+% Particle Swarm Optimization for Feature Selection in Classification: A Multi-Objective Approach
+
+\textsf{In the following, I would like to detail my major comments.}
+
+\begin{enumerate}
+      \item\textsf{Most of the techniques have been well-established in the literature, I feel that the proposed model and algorithm are simply a rehashing of existing results. In particular, the multi-objective formulation for communication functionality has been widely studies.}\\
+            \textcolor{blue}{\textbf{
+                        \textit{Reply}: We thank the reviewer for this comment. Our proposed work, like all research, does build upon the other pieces of research that we reference throughout the manuscript. However, we disagree that our proposed algorithm is simply replicating earlier results. \\
+                        First, we acknowledge that there exist other works which study multi-objective problems related to communication. However, it is important to note that this is a broad research area and that existing solutions to multi-objective communication problems are rarely applicable to other problems, including the VNFPP studied in this work. \\
+                        Further, of the works that do study the VNFPP, our work makes several novel contributions. In the updated manuscript, we discuss the key contributions in the introduction:
+                  }}\\
+            \textcolor{blue}{\textit{``...Our major contributions are as follows.
+                        \begin{itemize}
+                              \item By using queueing theory, we developed an analytical model that provides an efficient and accurate way to evaluate the QoS with regard to the expected latency, the packet loss of each service and the overall energy consumption of the underlying data center, all of which constitute the three-objective VNFPP in this paper.
+                              \item We developed a problem-specific solution representation for the VNFPP along with a tailored initialization operator that together promote a fast convergence and a feasibility guarantee. Both operations can be seamlessly incorporated into any evolutionary multi-objective optimization (EMO) algorithm.
+                              \item We validate the effectiveness and accuracy of the proposed algorithm under various settings. In particular, we consider problems with up to $8,192$ servers, which is $8$ times larger than all reported results. The performance of our tailored EMO algorithms are compared against their generic counterparts as well as state-of-the-art heuristics."
+                        \end{itemize}} \textbf{(Page x, highlighted in \textcolor{red}{red} color.)}}
+
+      \item\textsf{In section V, the propose evolutionary optimization framework is not novel. Though some tailored mechanisms are introduced, they are mainly used to deal with the specific example.}\\
+            \textcolor{blue}{\textbf{\textit{Reply}: We thank the reviewer for this comment. We acknowledge that the optimization framework is not novel, however it would seem unwise to develop a new framework when existing frameworks are suitable. In the revised manuscript, we discuss why our proposed operators allow for the discovery of high quality solutions in more detail.}}\\
+            \textcolor{blue}{\textit{
+                        ``From the results shown in~\pref{fig:alg_comparison} and~\pref{fig:alg_fixed}, it is clear that our proposed algorithm outperforms other competitors on all test cases. This can be attributed to our two proposed operators. First, it is clear from \pref{fig:alg_objectives} that proposed operators enable a diverse population of solutions. Our two proposed operators work together towards this goal. The initialization operator produces a diverse range of possible solutions, whilst the solution representation ensures that these solutions are feasible.\\
+                        Second, our proposed solution representation minimizes the distance between sequential VNFs, improving the overall QoS. We note that the two best performing algorithms, our proposed algorithm and ESP-VDCE, aim to minimize the distance between sequential VNFs. In contrast, both BFDSU and Stringer tend to produce longer path lengths thus lead to significantly worse solutions than our proposed algorithm. Since Stringer restricts the capacity of each server, it causes services to be placed across multiple servers. Likewise, the stochastic component of BFDSU can cause it to place VNFs far away from any other VNF of the service. In contrast, our proposed algorithm incorporates useful information into the optimization process and places sequential VNFs close by thus leading to better solutions.\\
+                        A final benefit of our algorithm is that it can iteratively improve the placements to minimize the energy consumption and QoS. Although ESP-VDCE does consider the path length, it otherwise uses a simple first fit heuristic that cannot consider how service instances should be placed in relation to each other. As a consequence, the performance of ESP-VDCE depends on the order in which services are considered. Our proposed algorithm considers the problem holistically and can make informed placement decisions."} \textbf{(Page x, highlighted in \textcolor{red}{red} color.)}}\\
+
+            \textsf{How to generalize this algorithm to deal with more practical applications is not discussed.}\\
+            \textcolor{blue}{\textbf{\textit{Reply}: We thank the reviewer for this suggestion. In the revised manuscript we have discussed some of the limitations of our work and how these could be improved in future work.}}\\
+            \textcolor{blue}{\textit{``There are some disadvantages and extensions to our current approach that could be considered in future work.
+                        \begin{itemize}
+                              \item A limitation of our proposed algorithm is that it is only applicable to Fat Tree network topologies. However, the underlying heuristic of our work - prefer to place VNFs on nearby servers - is applicable to any data center. It would be interesting to extend this work to arbitrary topologies.
+                              \item Although execution time is not a priority in this work, it is notable that metaheuristic approaches are typically slower than heuristic algorithms since they requires a large number of model evaluations. That said, the significant improvements we make over existing heuristic alternatives justifies our approach. In future work, fast heuristic alternatives to accurate models may reduce this gap between heuristic and metaheuristic algorithms.
+                              \item Furthermore, there are interesting possibilities in exploring the impact of different types of VNF and service. It would be interesting to determine how an alternative problem formulation would affect the design and results of a meta-heuristic alternative."
+                        \end{itemize}} \textbf{(Page x, highlighted in \textcolor{red}{red} color.)}}
+
+            \textsf{My key concern is the practical value of this paper. The implementation of the concept introduced in this paper might be difficult. First, how to select the Parato solution obtained? In practice, we only need one operational solution, how to balance multi-objective functions?}\\
+            \textcolor{blue}{\textbf{\textit{Reply}: We thank the reviewer for this comment. The process of selecting a solution is dependent on how the decision maker values the cost and benefits of each solution. To that extent, in this work we aimed to develop an algorithm that allows a decision maker to understand how the QoS metrics interact and to inform them on the opportunities that are available. We have modified the manuscript to make our intent clear.}}\\
+            \textcolor{blue}{\textit{``The goal of the VNFPP is to provide a number of services by placing VNFs on VMs in the data center and defining the paths so as to maximize QoS and minimize capital and operational costs. In this paper, we formulate a three-objective VNFPP that takes two QoS metrics (i.e., latency and packet loss) and a cost metric (i.e., energy consumption) into account. An understanding of how the QoS and energy consumption interact is critical to the good operation of a data center. A multi-objective formulation of the VNFPP that considers how these metrics conflict informs the decision maker on the cost-benefit trade off when increasing the amount of resources spent on services and allows them to make an informed selection from the set of possible trade off solutions."} \textbf{(Page x, highlighted in \textcolor{red}{red} color.)}}\\
+
+            \textsf{Second, The computational complexity of evolutionary algorithms are usually overwhelming, how to deal with large-scale networks.}\\
+            \textcolor{blue}{\textbf{\textit{Reply}: We thank the reviewer for this comment. We note that evolutionary algorithms and other metaheuristics are frequently applied to solve larger problem instances than peer algorithms can consider, e.g. \cite{JiaMZ21},\cite{PengJW19},\cite{ChengJ15}. It is also important to note that our proposed algorithm considers far larger problem instances than are typically considered in the literature. In the updated manuscript, we have made the following amendments to ensure this benefit is clear.}}\\
+            \textcolor{blue}{\textit{``...We validate the effectiveness and accuracy of the proposed algorithm under various settings. In particular, we consider problems with up to $8,192$ servers, which is $8$ times larger than all reported results. The performance of our tailored EMO algorithms are compared against their generic counterparts as well as state-of-the-art heuristics."} \textbf{(Page x, highlighted in \textcolor{red}{red} color.)}}\\
+            \textcolor{blue}{\textit{``...As a subset of heuristic methods, meta-heuristic methods have been widely used for NP-hard problems~\cite{TODO,TODO,TODO,TODO,TODO} including other real world problems with high numbers of variables \cite{TODO,TODO,TODO}."} \textbf{(Page x, highlighted in \textcolor{red}{red} color.)}}\\
+
+            \textsf{More importantly, real-time implementation of the algorithm might be impossible due to dynamic changes in the virtual network (e.g. time-varying value functions, network topologies, etc) and computational infeasibility.}\\
+            \textcolor{blue}{\textbf{\textit{Reply}: We thank the reviewer for this comment. Although this is an important problem, this is not the focus of our research at this time. Specifically, the multi-objective optimization problem is less time sensitive since the limiting factor is not the speed of the algorithm, but the speed with which a decision maker can comprehend and select a trade off solution.}}\\
+\end{enumerate}
+
+\clearpage

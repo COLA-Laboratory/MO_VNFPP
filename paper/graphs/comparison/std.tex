@@ -1,0 +1,27 @@
+\documentclass{standalone}
+\usepackage{pgfplots,pgfplotstable}
+\usetikzlibrary{pgfplots.groupplots}
+
+\begin{document}
+\begin{tikzpicture}
+
+    \pgfplotsset{every axis/.append style={
+                font = \Large,
+                line width = 1pt,
+                ytick style={draw=none},
+                xlabel style={sloped},
+                ylabel style={sloped}
+            }}
+
+    \begin{axis}[
+            xlabel=Latency (ms), ylabel=Packet loss (\%), zlabel=Energy (kW/h),
+            xmin = .5, xmax = 5, ymin = 0, ymax = 0.4, zmin = 5000, zmax = 22000
+        ]
+
+        \addplot3[only marks, scatter] table[col sep = comma, z filter/.code={\def\pgfmathresult{1.4}}] {../../../data/Comparison/16/0/std/NSGAII/122_12000.objs};
+
+    \end{axis}
+
+\end{tikzpicture}
+
+\end{document}

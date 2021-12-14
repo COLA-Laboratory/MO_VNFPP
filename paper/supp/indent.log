@@ -1,0 +1,25 @@
+INFO: latexindent version 3.7, 2019-07-13, a script to indent .tex files
+      latexindent lives here: /usr/local/texlive/2019/texmf-dist/scripts/latexindent/
+      Tue Oct 26 13:50:37 2021
+      Filename: /media/joebillingsley/Data/projects/NFV_PlacementModel_Journal/paper/figures/__latexindent_temp.tex
+INFO: Processing switches:
+      -y|--yaml: YAML settings specified via command line
+      -c|--cruft: cruft directory
+INFO: Directory for backup files and /media/joebillingsley/Data/projects/NFV_PlacementModel_Journal/paper/supp/indent.log: /media/joebillingsley/Data/projects/NFV_PlacementModel_Journal/paper/supp/
+INFO: YAML settings read: defaultSettings.yaml
+      Reading defaultSettings.yaml from /usr/local/texlive/2019/texmf-dist/scripts/latexindent/defaultSettings.yaml
+INFO: YAML settings read: indentconfig.yaml or .indentconfig.yaml
+      Home directory is /home/joebillingsley (didn't find either indentconfig.yaml or .indentconfig.yaml)
+      To specify user settings you would put indentconfig.yaml here: /home/joebillingsley/indentconfig.yaml
+      Alternatively, you can use the hidden file .indentconfig.yaml as: /home/joebillingsley/.indentconfig.yaml
+INFO: YAML settings read: -y switch
+      Updating masterSettings with defaultIndent:     
+INFO: Phase 1: searching for objects
+INFO: Phase 2: finding surrounding indentation
+INFO: Phase 3: indenting objects
+INFO: Phase 4: final indentation check
+INFO: Output routine:
+      Not outputting to file; see -w and -o switches for more options.
+      --------------
+INFO: Please direct all communication/issues to:
+      https://github.com/cmhughes/latexindent.pl

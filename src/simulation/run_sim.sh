@@ -1,0 +1,12 @@
+PATH=;C:\OMNET\omnetpp-5.5.1\bin;C:\OMNET\omnetpp-5.5.1\tools\win64\mingw64\bin;C:\OMNET\omnetpp-5.5.1\tools\win64\usr\bin;;C:/OMNET/omnetpp-5.5.1/ide/jre/bin/server;C:/OMNET/omnetpp-5.5.1/ide/jre/bin;C:/OMNET/omnetpp-5.5.1/ide/jre/lib/amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\AMD\AMDuProf\bin;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\Program Files\MATLAB\R2019a\bin;C:\Program Files\Git\cmd;C:\Users\jb931\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\jb931\AppData\Local\Programs\Python\Python36\;C:\Users\jb931\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\jb931\AppData\Local\Programs\Python\Python36-32\;C:\Users\jb931\.cargo\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\AMD\AMDuProf\bin;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\Program Files\Git\cmd;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\AMD\AMDuProf\bin;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\Program Files\Git\cmd;C:\OMNET\omnetpp-5.5.1\tools\win64\usr\local\bin;C:\OMNET\omnetpp-5.5.1\tools\win64\usr\bin;C:\OMNET\omnetpp-5.5.1\tools\win64\usr\bin;C:\Windows\System32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\OMNET\omnetpp-5.5.1\tools\win64\usr\bin\site_perl;C:\OMNET\omnetpp-5.5.1\tools\win64\usr\bin\vendor_perl;C:\OMNET\omnetpp-5.5.1\tools\win64\usr\bin\core;C:\Users\jb931\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\PHP7;C:\Rtools\bin;;C:\OMNET\omnetpp-5.5.1\ide;
+
+OMNETPP_IMAGE_PATH=C:\OMNET\omnetpp-5.5.1\images
+
+cd D:/Research/NFV_PlacementModel_Journal/src/simulation/simulations
+
+# OMNET doesn't reset static variables, have to run each one seperately to be safe
+# Low Latency
+for i in {0..100}
+do
+	./simulations.exe -r $i -m -u Cmdenv -c Test omnetpp.ini
+done

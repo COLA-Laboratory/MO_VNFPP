@@ -1,0 +1,64 @@
+\documentclass{standalone}
+
+\usepackage{graphicx}
+
+\usepackage{tikz}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    cell/.style={rectangle, draw, minimum width=.6cm, minimum height = .7cm},
+]
+
+% Add mutation
+\node[cell] (BA1) {};
+\node[cell] (BA2) [right= -.01cm of BA1, thick] {\textbf{A}};
+\node[cell] (BA3) [right= -.01cm of BA2] {};
+\node[cell] (BA4) [right= -.01cm of BA3] {};
+\node[cell] (BA5) [right= -.01cm of BA4, thick] {\textbf{C}};
+\node[cell] (BA6) [right= -.01cm of BA5] {};
+\node[cell] (BA7) [right= -.01cm of BA6] {\textbf{B}};
+\node[cell] (BA8) [right= -.01cm of BA7] {};
+\node[cell] (BA9) [right= -.01cm of BA8] {};
+
+\node (H1) [right=1cm of BA9] {};
+\node (H2) [below=-0.2cm of H1] {};
+
+\node (T1) [draw, rectangle, right=-.6cm of H2] {Swap};
+
+\node (HA1) [above=.1cm of H2] {};
+
+\node (A1) [left=.4cm of HA1] {};
+\node (A2) [right=1.2cm of A1] {};
+
+\draw[->] (A1) -- (A2);
+
+\node (H2) [right=1cm of H1] {};
+
+\node[cell] (BD1) [right=-.01cm of H2] {};
+
+\node[cell] (BD2) [right=-.01cm of BD1, thick] {\textbf{C}};
+\node[cell] (BD3) [right=-.01cm of BD2] {};
+\node[cell] (BD4) [right=-.01cm of BD3] {};
+\node[cell] (BD5) [right=-.01cm of BD4, thick] {\textbf{A}};
+\node[cell] (BD6) [right=-.01cm of BD5] {};
+\node[cell] (BD7) [right=-.01cm of BD6] {\textbf{B}};
+\node[cell] (BD8) [right=-.01cm of BD7] {};
+\node[cell] (BD9) [right=-.01cm of BD8] {};
+
+\node (A3) [above=.6cm of BA2] {};
+\node (A4) [above=0cm of BA2] {};
+
+\draw[->] (A3) -- (A4);
+
+\node (A5) [above=.6cm of BA5] {};
+\node (A6) [above=0cm of BA5] {};
+
+\draw[->] (A5) -- (A6);
+
+\end{tikzpicture}
+
+\end{document}

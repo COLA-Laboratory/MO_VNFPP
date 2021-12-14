@@ -1,0 +1,8 @@
+src/alg/target/
+main.*
+!main.tex
+__latexindent_temp.tex
+data/
+processed/
+results/
+data_old/

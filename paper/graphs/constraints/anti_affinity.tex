@@ -1,0 +1,39 @@
+\documentclass[a4paper]{standalone}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        footnotesize,
+        width=\textwidth,
+        height=0.5\textwidth,
+        symbolic x coords={10,20,30,40,50,60,70,80,90,100},
+        xlabel = {Percentage of services with anti-affinity constraints (\%)},
+        xtick = data,
+        xtick pos=left,
+        major x tick style = {opacity=0},
+        minor x tick num = 1,
+        xminorgrids,
+        ylabel = {Normalized HV},
+        ylabel style={
+            yshift=-2ex,
+        },
+        ybar=\pgflinewidth,
+        ymin = -0.001,
+        ymax = 1.0,
+        area legend,
+        bar width=8pt,
+        legend pos=north west,
+        legend cell align={left},
+        line width = 1pt,
+    ]
+        \addplot [red, postaction={pattern=north east lines, pattern color=red!60}, fill=red!30, error bars/.cd,x dir=both, error bar style={line width=1pt}, x explicit, y dir=both, y explicit] table[x index = 0, y index = 5, y error minus index = 4, y error plus index = 6, col sep = comma]  {../../../processed/anti_affinity/NSGAII.csv};
+        \addplot [blue, postaction={pattern=crosshatch dots, pattern color=blue!60}, fill=blue!30, error bars/.cd,x dir=both, error bar style={line width=1pt}, x explicit, y dir=both, y explicit] table[x index = 0, y index = 2, y error minus index = 1, y error plus index = 3, col sep = comma]  {../../../processed/anti_affinity/NSGAII.csv};
+
+        \legend{Proposed representation, Direct representation}
+    \end{axis}
+\end{tikzpicture}
+\end{document}

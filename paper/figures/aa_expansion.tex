@@ -1,0 +1,98 @@
+\documentclass{standalone}
+
+\usepackage{graphicx}
+
+\usepackage{tikz}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes,decorations}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    cell/.style={rectangle, draw, minimum width=.7cm, minimum height = .7cm},
+]
+
+% Simple expansion
+\node[cell] (S11) {\textbf{C}};
+\node[cell] (S12) [right= -.01cm of S11] {};
+\node[cell] (S13) [right= -.01cm of S12] {};
+\node[cell] (S14) [right= -.01cm of S13] {};
+\node[cell] (S15) [right= -.01cm of S14] {};
+\node[cell] (S16) [right= -.01cm of S15] {\textbf{B}};
+\node[cell] (S17) [right= -.01cm of S16] {};
+\node[cell] (S18) [right= -.01cm of S17] {};
+\node[cell] (S19) [right= -.01cm of S18] {};
+
+\node (H1) [below=0.25cm of S11] {};
+\node (T1) [right=1.1cm of H1] {1) Initial solution};
+
+\node[cell] (S21) [below=0.5cm of H1] {C1};
+\node[cell] (S22) [right= -.01cm of S21] {C2};
+\node[cell] (S23) [right= -.01cm of S22] {C3};
+\node[cell] (S24) [right= -.01cm of S23] {C4};
+\node[cell] (S25) [right= -.01cm of S24] {};
+\node[cell] (S26) [right= -.01cm of S25] {};
+\node[cell] (S27) [right= -.01cm of S26] {\textbf{B}};
+\node[cell] (S28) [right= -.01cm of S27] {};
+\node[cell] (S29) [right= -.01cm of S28] {};
+
+\node[cell] () [right= -.01cm of S24, cross out] {};
+\node[cell] () [right= -.01cm of S25, cross out] {};
+
+\node (H2) [below=0.5cm of S21] {};
+\node (T2) [right=-0.4cm of H2, text width = 6cm] {2) After expansion some VMs are unusuable due to the $AA$ constraint.};
+
+\node[cell] (S31) [below=0.7cm of H2] {C1};
+\node[cell] (S32) [right= -.01cm of S31] {C2};
+\node[cell] (S33) [right= -.01cm of S32] {C3};
+\node[cell] (S34) [right= -.01cm of S33] {C4};
+\node[cell] (S35) [right= -.01cm of S34] {};
+\node[cell] (S36) [right= -.01cm of S35] {};
+\node[cell] (S37) [right= -.01cm of S36] {B1};
+\node[cell] (S38) [right= -.01cm of S37] {B2};
+\node[cell] (S39) [right= -.01cm of S38] {B3};
+
+\node[cell] () [right= -.01cm of S34, cross out] {};
+\node[cell] () [right= -.01cm of S35, cross out] {};
+
+\node (H3) [below=0.25cm of S31] {};
+\node (T3) [right=0.7cm of H3] {3) Completed expansion.};
+
+% Row 1
+\node (SH1) [right=-.13cm of S13] {};
+\node (SH2) [above=.4cm of SH1] {};
+\node (SH3) [below=.4cm of SH1] {};
+\draw[-, thick] (SH2) -- (SH3);
+
+\node (SH1) [right=-.13cm of S16] {};
+\node (SH2) [above=.4cm of SH1] {};
+\node (SH3) [below=.4cm of SH1] {};
+\draw[-, thick] (SH2) -- (SH3);
+
+% Row 2
+\node (SH1) [right=-.13cm of S23] {};
+\node (SH2) [above=.4cm of SH1] {};
+\node (SH3) [below=.4cm of SH1] {};
+\draw[-, thick] (SH2) -- (SH3);
+
+\node (SH1) [right=-.13cm of S26] {};
+\node (SH2) [above=.4cm of SH1] {};
+\node (SH3) [below=.4cm of SH1] {};
+\draw[-, thick] (SH2) -- (SH3);
+
+% Row 3
+\node (SH1) [right=-.13cm of S33] {};
+\node (SH2) [above=.4cm of SH1] {};
+\node (SH3) [below=.4cm of SH1] {};
+\draw[-, thick] (SH2) -- (SH3);
+
+\node (SH1) [right=-.13cm of S36] {};
+\node (SH2) [above=.4cm of SH1] {};
+\node (SH3) [below=.4cm of SH1] {};
+\draw[-, thick] (SH2) -- (SH3);
+
+\end{tikzpicture}
+
+\end{document}

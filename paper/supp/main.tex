@@ -1,0 +1,437 @@
+\documentclass[journal]{IEEEtran}
+
+% \usepackage{algorithm}
+
+% \usepackage[noend]{algpseudocode}
+%\usepackage[ruled, linesnumbered, vlined, commentsnumbered]{algorithm2e}
+\usepackage{graphicx,subcaption} % figure related
+\usepackage{amsfonts,amssymb,amsmath,amsthm,amsopn}	% math related
+\usepackage{hhline,booktabs,colortbl,multirow,tabularx,diagbox,threeparttable} % table related
+\usepackage[listings,skins,breakable]{tcolorbox}
+\usepackage[ruled, vlined, linesnumbered, commentsnumbered]{algorithm2e}
+
+\usepackage{enumerate}
+\usepackage{authblk}
+\usepackage{footnote}
+\usepackage{hyperref}
+\usepackage{prettyref}
+\usepackage{cite}
+\usepackage{setspace}
+\usepackage{color}
+\usepackage{xcolor}  % Required for custom colors
+
+\usepackage{relsize}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+\usepackage{tikz}
+
+\tcbset{colback=white, arc=0mm, outer arc=0pt}
+
+%\usepackage[section]{placeins}
+
+\def\hlinew#1{%
+  \noalign{\ifnum0=`}\fi\hrule \@height #1 \futurelet
+   \reserved@a\@xhline}
+\makeatother
+
+\definecolor{mycyan}{gray}{.7}
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{property}{Property}
+
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+
+\let\oldnl\nl% Store \nl in \oldnl
+\newcommand{\noln}{\renewcommand{\nl}{\let\nl\oldnl}}
+
+% \newcommand\CONDITION[2]%
+%   {\begin{tabular}[t]{@{}l@{}l@{}}
+%      #1&#2
+%    \end{tabular}%
+%   }
+% \algdef{SE}[WHILE]{While}{EndWhile}[1]%
+%   {\algorithmicwhile\ \CONDITION{#1}{\ \algorithmicdo}}%
+%   {\algorithmicend\ \algorithmicwhile}
+% \algdef{SE}[FOR]{For}{EndFor}[1]%
+%   {\algorithmicfor\ \CONDITION{#1}{\ \algorithmicdo}}%
+%   {\algorithmicend\ \algorithmicfor}
+% \algdef{S}[FOR]{ForAll}[1]%
+%   {\algorithmicforall\ \CONDITION{#1}{\ \algorithmicdo}}
+% \algdef{SE}[REPEAT]{Repeat}{Until}{\algorithmicrepeat}[1]%
+%   {\algorithmicuntil\ \CONDITION{#1}{}}
+% \algdef{SE}[IF]{If}{EndIf}[1]%
+%   {\algorithmicif\ \CONDITION{#1}{\ \algorithmicthen}}%
+%   {\algorithmicend\ \algorithmicif}%
+% \algdef{C}[IF]{IF}{ElsIf}[1]%
+%   {\algorithmicelse\ \algorithmicif\ \CONDITION{#1}{\ \algorithmicthen}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\newcommand\notealf[1]{\mbox{}\marginpar{\footnotesize\raggedright\hspace{0pt}\color{blue}\emph{#1}}}
+\newcommand{\pref}{\prettyref}
+
+\newrefformat{fig}{Fig.~\ref{#1}}
+\newrefformat{tab}{Table~\ref{#1}}
+\newrefformat{sec}{Section~\ref{#1}}
+\newrefformat{app}{Appendix~\ref{#1}}
+\newrefformat{alg}{Algorithm~\ref{#1}}
+\newrefformat{property}{Property~\ref{#1}}
+\newrefformat{theorem}{Theorem~\ref{#1}}
+\newrefformat{lemma}{Lemma~\ref{#1}}
+\newrefformat{corollary}{Corollary~\ref{#1}}
+\newrefformat{proposition}{Proposition~\ref{#1}}
+\newrefformat{def}{Definition~\ref{#1}}
+\newrefformat{eq}{equation~(\ref{#1})}
+
+\captionsetup{compatibility=false}
+
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+
+\setlength{\belowcaptionskip}{-1em}
+
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}
+
+\begin{document}
+%
+%\title{A Formal Model for Multi-objective Optimisation of Network Function Virtualisation Placement}
+\title{Appendix Document}
+%
+%\titlerunning{A Formal Model for Multi-objective Optimisation of NFV Placement}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+%\author{
+%	Joseph Billingsley,~\IEEEmembership{Student Member,~IEEE},
+%	Ke Li,~\IEEEmembership{Member,~IEEE},
+%	Wang Miao,
+%	Geyong Min,
+%	Nektarios Georgalas
+%	\thanks{J. Billingsley, K. Li, W. Miao and G. Min are with the Department of Computer Science, University of Exeter, North Park Road, Exeter, EX4 4QF, UK (e-mail: \{j.billingsley, k.li, wang.miao, g.min\}@exeter.ac.uk)}
+%	\thanks{N. Georgalas is with the Research and Innovation, British Telecom, Martlesham, UK (e-mail: nektarios.georgalas@bt.com)}
+%}
+
+\maketitle
+
+\appendix
+
+\subsection{Lookup Table of Mathematical Notations}
+\label{sec:lookup_table}
+
+The complete mathematical notations used in our paper are listed in~\pref{tab:definition}.
+
+\vspace{0.5em}
+\begin{table}[h]
+	\caption{Lookup table of mathematical notations}
+	\label{tab:definition}
+	\center
+	\begin{tabular}{c|l}
+		\hline
+		Symbol & Definition \\
+		\hline
+        $\mathcal{S}$     & Set of all services \\
+        $\mathcal{C}$     & Set of all network components \\
+        $\mathcal{C}^{s}$ & Set of all servers \\
+        $\mathcal{V}$     & Set of all VNFs \\
+        $\mathcal{L}$     & Set of links connecting network components\\
+        $\mathcal{R}^s$   & Set of all routes for the service $s$ \\
+		$\mathcal{A}$     & Set of anti-affinity services \\
+		\hline
+		$\mathbb{P}^d_s$ & Service packet loss probability \\
+		$\mathbb{P}_{R^s_i}$ & The probability the route $R^s_{i}$ is taken \\
+		$\mathbb{P}^d_c$ & Component packet loss probability \\
+		$R^s_{i}$       & The $i$th route for service $s$ \\
+		$R^s_{i,j}$     & The $j$th component of the $i$th route of service $s$ \\
+		$W_s$ & Service latency \\
+		$\lambda_s$ & Service arrival rate \\
+		$\lambda_c$ & Component arrival rate \\
+		$\mu_c$ & Component service rate \\
+		$B_c$ & Component queue length $c$ \\
+		$\mathbb{W}_c$ & Component waiting time \\
+        \hline
+		$\gamma$ & Model threshold \\
+		$\Delta$ & Number of iterations below threshold \\ 
+
+		$N^M_v$ & Max number of instances of the VNF $v$ \\
+
+		$|\cdot|$ & Cardinality of a set or sequence \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsection{Proofs of Lemmas}
+\label{sec:proofs}
+
+\begin{lemma}
+The feasible region under the independence assumption is larger than the exact feasible region.
+\end{lemma}
+
+\begin{proof}
+The independence assumption allows each VNF to be placed at any location independently of where other VNFs have been placed. We refer to the feasible region under the independence assumption as the independent feasible region. The independent feasible region contains all solutions where multiple VNFs occupy the same VM. In addition, it also contains all solutions where VNFs are not placed on the same location. This latter subspace is the exact feasible region and a subset of the independent feasible region.
+\end{proof}
+
+
+
+\begin{lemma}
+The arrival rate at each component converges towards a fixed point as time approaches infinity.
+\label{lemma:arrival_rate}
+\end{lemma}
+
+\begin{proof}
+Our proof considers a sequence of moments where the arrival rate is stable. We show that the instantaneous arrival rate $\lambda_t$ at any component at the time step $t$ is bounded by the arrival rates at the time steps $t-1$ and $t-2$. When $t\to\infty$, this bound converges towards a fixed value: %This is expressed as,
+\begin{equation}
+	\lim_{t\to\infty }{{\left|\lambda_{t-1}-\lambda_{t-2}\right|}}=0.
+\end{equation}
+%\noindent We show this by induction.
+
+Before carrying on our proof, we introduce the following two properties of the packet loss probability.
+\begin{itemize}
+	\item The packet loss probability strictly increases with the growth of arrival rate.
+	\item The packet loss probability asymptotically approaches $1$ with the growth of arrival rate.
+\end{itemize}
+
+Our proof is done by induction. We first prove that $\lambda_{t=2}$ is always bounded by $\lambda_{0}$ and $\lambda_{1}$ and then the inductive cases with $t\to \infty$. 
+
+When $t=0$, there is no packet in the queue, thus no packet is dropped. In this case, the effective arrival rate reaches its maximum. Furthermore, since the arrival rate is less than $\infty$ and the packet loss asymptotically approaches $1$, all future instances will have some packet lost where $\lambda_{t=0}>\lambda_{t>0}$. Since the effective arrival rate reaches its highest value at $t=0$, the packet loss probability at the next time step $\mathbb{P}^d_{t=1}$ must be the highest value. Hence, the effective arrival rate $\lambda_{t=1} < \lambda_{t>1}$. All in all, we have:
+\begin{equation}
+	\lambda_{t=1}<\lambda_{t=2}<\lambda_{t=0},
+\end{equation}
+where we denote $\lambda_{t=0}$ and $\lambda_{t=1}$ as the upper and lower bounds respectively.
+
+The inductive case consists of two parts.
+
+\begin{itemize}
+	\item We first show that if $\lambda_{t=n}$ is the lower bound of $\lambda$, then $\lambda_{t=n+1}$ will be the new upper bound. From the first property $\mathbb{P}^d_{t=n+1}<\mathbb{P}^d_{t=n}$, we have $\lambda_{t=n+1} > \lambda_{t=n}$. Furthermore, since $\lambda_{t=n} < \lambda_{t>n}$ and $\mathbb{P}^d_{t=n+1} < \mathbb{P}^d_{t>n+1}$, we have $\lambda_{t=n+1} > \lambda_{t>n}$ that makes $\lambda_{t=n+1}$ the new upper bound.
+	\item Secondly, we show that if $\lambda_{t=n}$ is the upper bound of $\lambda$, then $\lambda_{t=n+1}$ will be the new lower bound. From the first property $\mathbb{P}^d_{t=n+1} > \mathbb{P}^d_{t=n}$, we have $\lambda_{t=n+1}<\lambda_{t=n}$. Furthermore, since $\lambda_{t=n} > \lambda_{t>n}$ and $\mathbb{P}^d_{t=n+1}>\mathbb{P}^d_{t>n+1}$, we have $\lambda_{t=n+1}<\lambda_{t>n}$ that makes $\lambda_{t=n+1}$ the new lower bound.
+\end{itemize}
+
+Since the new upper and lower bounds of $\lambda$ are within the previous upper and lower bounds, they move towards each other at every time step and finally converge when $t\to \infty $.
+\end{proof}
+
+\subsection{Pseudo-codes}
+\label{sec:pseudo_code}
+
+The pseudo codes of the algorithms proposed in this paper are given in~\pref{alg:calc_inst_arr} to~\pref{alg:balance}.
+
+\begin{algorithm}[h]
+	\KwData{Services $S$, service paths $R^s$, path selection probabilities $\mathbb{P}_{R^s}$, packet drop probabilities $\mathbb{P}^d_c$, service arrival rate $\lambda_s$}
+
+	\For{$s \in\mathcal{S}$} {
+		\For{$i \gets 0$ \KwTo $|\mathcal{R}^s|$} {
+
+			$\lambda \gets \lambda_{s} \cdot \mathbb{P}_{R^s_i}$ \tcp{Set route arrival rate}
+
+			\For{$c \in R^s_i$} {
+				$\lambda_{c} \gets \lambda_{c} + \lambda$ \tcp{Add rate to component}
+
+				$\lambda \gets \lambda \cdot (1 - \mathbb{P}_c^d)$ \tcp{Set departing rate}
+			}
+		}
+	}
+
+	\caption{Calculate the instantaneous expected arrival rates of all components}
+	\label{alg:calc_inst_arr}
+\end{algorithm}
+
+\begin{algorithm}[t!]
+	\KwData{Thresholds $\delta$ and $\gamma$}
+	\KwResult{Sets the arrival rate $\lambda_c$ for all components}
+	$N^i \gets 0$ \tcp{Sequential iterations below $\delta$}
+	
+	\For{$c \in C$}{
+		$\mathbb{P}^d_c \gets 0$ \tcp{Component packet loss}
+
+		$\overline{\lambda_c} \gets 0$ \tcp{Expected arrival rate}
+	}
+
+	Calculate $\lambda_c$ all components using \pref{alg:calc_inst_arr}
+	
+	\While{$N_{ci} < \gamma$}{
+
+		\For{$c \in C$}{
+			$\lambda^p_c \gets \lambda_c$  \tcp{Previous arrival rate of $c$}
+
+			Update $\mathbb{P}^d_c$ using $\lambda_c$ and equation (10)
+		}
+
+		Update $\lambda_c$ of all components using \pref{alg:calc_inst_arr}
+
+		$M\!D \gets 0$ \tcp{Max. divergence}
+
+		\For{$c \in C$}{
+			\tcp{Calculate mean of current bounds}
+			$\overline{\lambda^p_c} \gets \left(\lambda^p_c + \lambda_c\right) /\ 2$
+
+			\tcp{Measure divergence of mean}
+			$D \gets \abs{\overline{\lambda^p_c} - \overline{\lambda_c}}$
+
+			\tcp{Update expected arrival rate}
+			$\overline{\lambda_c} \gets \overline{\lambda^p_c}$
+
+			\tcp{Update maximum divergence}
+			$M\!D \gets \textsc{Max}(D, M\!D)$
+		}
+
+		\eIf{$M\!D < \delta$}{
+			$N_{ci} \gets N + 1$
+		}{
+			$N_{ci} \gets 0$
+		}
+	}
+	
+	\tcp{Set final values of $\lambda_c$}
+	\For{$c \in C$}{
+		$\lambda_c \gets \overline{\lambda_c}$
+	}
+
+    % \Return $\lambda_c$
+	\caption{Calculate the stable expected arrival rates of all components}
+	\label{alg:calc_arr}
+\end{algorithm}
+
+\begin{algorithm}[h]
+	
+	\KwData{Solution genotype $g$, total num. of VMs $N^T$, num. VMs per server $N^V$, set of services $S$}
+	\KwResult{Balanced solution $g$ modified in place}
+
+	$F \gets \emptyset$ \tcp{Set of free VMs}
+
+	$P \gets \emptyset$ \tcp{Set of used VMs}
+
+	\For{$s \in S$} {
+		$N^I_s \gets 0$ \tcp{Number of instances of service $s$}
+	}
+	
+	\tcc{\textbf{1. Find used/free VMs}}
+	\For{$i \gets 0$ \KwTo $N^T$} {
+		\eIf{$g_i = \texttt{None}$}{
+			\tcp{Record location of free VMs}
+			$F \gets F \cup i$
+		}{
+			\tcp{Record location of service instances}
+			$s \gets g_i$
+
+			$P \gets P \cup (i, s)$
+
+			$N^I_s \gets N^I_s + 1$
+		}
+	}
+	\tcc{\textbf{2. Find size of solution after mapping}}
+
+	$N^U \gets 0$ \tcp{Total num. VMs used after mapping}
+
+	\For{$s \in S$}{
+		$L_s \gets 0$ \tcp{Num. VMs used by the service}
+
+		\eIf{$s \in \mathcal{A}$}{
+			$L_s \gets \left\lceil \abs{s} / N^V \right\rceil \cdot N^V$
+		}{
+			$L_s \gets |S_i|$
+		}
+		$N^U \gets N^U + L_s \cdot N_s^I$
+	}
+	\tcc{\textbf{3. Assign missing services to free spaces}}
+	$M \gets \emptyset$ \tcp{Set of missing services}
+	\For{$s \in S$}{
+		\If{$N^I_s = 0$}{
+			$M \gets M \cup s$
+		}
+	}
+
+	\While{$\abs{M} > 0 $ and $ \abs{F} > 0$}{
+		$i \gets \text{\textbf{pop} first free VM from} \; F$
+
+		$s \gets \text{\textbf{pop} first missing service from} \; M$
+
+		$g_i \gets s$ \tcp{Assign service to VM}
+
+		$N^U \gets N^U + L_s$
+	}
+
+	\tcc{\textbf{4. Swap service instances until feasible}}
+
+	\textbf{Sort} service instances in $P$ by their contribution (equation (21)) in ascending order
+
+	\While{$N^U > N^T$ or $\abs{M} > 0$} {
+		$(i, s) \gets $ \textbf{pop} first service instance in $P$
+
+		$g_i \gets \texttt{None}$ \tcp{Free VM}
+
+		$N^U \gets N^U - L_s$
+
+		\If{$\abs{M} > 0$}{
+			$s \gets \textbf{pop } \text{first missing service from } M$ 
+
+			$g_i \gets s$
+
+			$N^U \gets N^U + L_s$
+		}
+	}
+	\caption{Balances the number of instances of each service to ensure feasibility.}
+	\label{alg:balance}
+\end{algorithm}
+
+\subsection{Parameter Settings}
+\label{sec:parameters}
+
+The parameter settings used in our experiments are listed in~\pref{tab:parameter}.
+
+\begin{table}[h]
+    \vspace{1em}
+    \centering
+    
+    \caption{Parameter settings used in evaluation}
+    \label{tab:parameter}
+    \begin{tabular}{ll}
+        \hline
+        Parameter                             & Setting        \\
+        \hline
+        Mean service arrival rate             & $10$ requests per ms \\
+        Variance service arrival rate         & $3$ requests per ms  \\
+        \hline
+        Per port service rate                 & $20$ requests per ms \\
+        Per port queue length                 & $20$ requests    \\
+        Server active energy cost             & $30$ kw/h        \\
+        Server idle energy cost               & $10$ kw/h        \\
+        \hline
+        Min. data center utilization          & $60$\%           \\
+        Mean service length                   & $5$ VNFs         \\
+        Variance service length               & $1$ VNFs         \\
+        Min service length                    & $2$ VNFs         \\
+        \hline
+        Mean VNF service rate                 & $10$ requests per ms \\
+        Variance VNF service rate             & $3$ requests per ms  \\
+        VNF queue length                      & $20$             \\
+        \hline
+        Model tolerance $\left(\delta\right)$ & $5.0$            \\
+        Min. iterations $\left(\gamma\right)$ & $10$             \\
+        \hline
+        Population size $\left(n\right)$      & $120$            \\
+        Mutation rate                         & $1/n$          \\
+        Crossover probability                 & $0.9$            \\
+        Number of evaluations                 & $1200$           \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,bibliography}
+
+\end{document}
+%:

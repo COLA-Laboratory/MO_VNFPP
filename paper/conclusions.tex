@@ -1,0 +1,22 @@
+% ~ 1 page
+% !TeX root = ./main.tex
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+% Single opening sentence then re-Enumerate principle contributions
+By utilizing data center resources efficiently, we can provide high quality services and minimize their environmental impact. This work provided an efficient and accurate analytical model with which to evaluate the QoS of large data centers. To solve our VNFPP, we proposed a problem specific solution representation along with a tailored initialization strategy to guarantee the generation of feasible solutions, both of which are directly pluggable into any EMO algorithm. There are four main findings from our comprehensive experiments.
+\begin{itemize}
+    \item Our proposed model is significantly more accurate than the existing competitors, especially when data center components become self-dependent.
+    \item Widely used surrogate models provide insufficient information to produce diverse solutions when being used to solve our VNFPP. In contrast, accurate models that consider packet loss are effective.
+    \item Our proposed algorithm produces significantly better solutions than its competitors, especially when solving large scale VNFPPs.% In particular, our algorithm provides superior results over existing heuristic algorithms, which do not consider how the placement of services can affect each other, and also against alternative meta-heuristic algorithms which use less suitable solution representations.  % 'Better' or 'more diverse / optimal' ?
+    \item Our proposed solution representation is highly effective for challenging constraints. In contrast, alternative solution representations fail to find feasible solutions.
+\end{itemize}
+
+% Enumerate future extensions
+There are some disadvantages and extensions to our current approach that could be considered in future work.
+\begin{itemize}
+    \item A limitation of our proposed algorithm is that it is only applicable to Fat Tree network topologies. However, the underlying heuristic of our work - prefer to place VNFs on nearby servers - is applicable to any data center. It would be interesting to extend this work to arbitrary topologies.
+    \item Although execution time is not a priority in this work, it is notable that metaheuristic approaches are typically slower than heuristic algorithms since they requires a large number of model evaluations. That said, the significant improvements we make over existing heuristic alternatives justifies our approach. In future work, fast heuristic alternatives to accurate models may reduce this gap between heuristic and metaheuristic algorithms.
+    \item Furthermore, there are interesting possibilities in exploring the impact of different types of VNF and service. It would be interesting to determine how an alternative problem formulation would affect the design and results of a meta-heuristic alternative.
+\end{itemize}

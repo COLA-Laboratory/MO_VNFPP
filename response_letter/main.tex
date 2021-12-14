@@ -1,0 +1,122 @@
+\documentclass[DIV15, a4paper]{article}
+
+% --------------------------------------------------------------------
+% Define our own paper format
+% --------------------------------------------------------------------
+\setlength\textwidth{6.5in}
+\setlength\textheight{9.5in}
+\setlength\oddsidemargin{-0.25in}
+\setlength\topmargin{-0.25in}
+\setlength\headheight{0in}
+\setlength\headsep{0in}
+\setlength\columnsep{18pt}
+\sloppy
+
+% --------------------------------------------------------------------
+% Packages
+% --------------------------------------------------------------------
+\usepackage[ruled, linesnumbered, vlined, commentsnumbered]{algorithm2e}
+\usepackage{authblk}
+\usepackage{prettyref}
+\usepackage{graphicx}
+\usepackage{diagbox}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{footnote}
+\usepackage{threeparttable}
+\usepackage{hyperref}
+\usepackage{amsopn}
+\usepackage{cite}
+\usepackage{setspace}
+\usepackage{hhline}
+\usepackage{color}
+\usepackage{xcolor}  % Required for custom colors
+\usepackage{rotating}
+
+\usepackage{verbatim}
+\usepackage{subcaption}
+
+% Colors
+% Define a few colors for making text stand out within the presentation
+\definecolor{myblue}{RGB}{34,31,217}
+
+\definecolor{mycyan}{gray}{.7}
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{property}{Property}
+
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\newcommand{\bb}[1]{\multicolumn{1}{>{\columncolor{mycyan}}c}{\textbf{{#1}}}}
+\newcommand\notealf[1]{\mbox{}\marginpar{\footnotesize\raggedright\hspace{0pt}\color{blue}\emph{#1}}}
+\newcommand{\pref}{\prettyref}
+\newcommand{\STAB}[1]{\begin{tabular}{@{}c@{}}#1\end{tabular}}
+
+\newrefformat{fig}{Figure~\ref{#1}}
+\newrefformat{tab}{Table~\ref{#1}}
+\newrefformat{sec}{Section~\ref{#1}}
+\newrefformat{app}{Appendix~\ref{#1}}
+\newrefformat{alg}{Algorithm~\ref{#1}}
+\newrefformat{property}{Property~\ref{#1}}
+\newrefformat{theorem}{Theorem~\ref{#1}}
+\newrefformat{corollary}{Corollary~\ref{#1}}
+\newrefformat{proposition}{Proposition~\ref{#1}}
+\newrefformat{def}{Definition~\ref{#1}}
+\newrefformat{eq}{equation~(\ref{#1})}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\usepackage{graphicx}
+\definecolor{Gray}{gray}{0.9}
+\usepackage{scrpage2}
+
+%\usepackage{datetime}
+
+%\pagestyle{scrheadings}
+%\ohead{D2.7 -- How to Design Self-aware Systems}
+%\ihead{FP7-257906 EPiCS}
+%\cfoot{Page \thepage\ of \pageref{LastPage}}
+
+\usepackage{lscape}
+
+\newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
+\newcommand*{\email}[1]{%
+    \normalsize\href{mailto:#1}{#1}\par
+    }
+
+\begin{document}
+
+\noindent Re: No. \textit{CYB-E-2021-05-1216}\\
+{\textbf{TITLE:}}\ \textbf{Multi-Objective Virtual Network Function Placement: A Formal Model and Effective Algorithms}\\
+
+\noindent Dear Editor-in-Chief,\\
+
+We would like to thank you, the associate editor and the anonymous reviewers for their constructive comments on our manuscript. Following your suggestions, we have carefully revised our manuscript. Please find our point-by-point responses and the revised manuscript in this document.\\\\
+
+Yours Sincerely,\\\\
+Joseph Billingsley, Ke Li, Wang Miao, Geyong Min, Nektarios Georgalas
+\clearpage
+
+\input{ae}
+
+\input{reviewer1}
+
+\input{reviewer2}
+
+\input{reviewer3}
+
+\end{document}
