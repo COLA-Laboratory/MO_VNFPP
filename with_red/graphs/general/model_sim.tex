@@ -18,7 +18,7 @@
     }
     
     \begin{groupplot}[
-            group style = {group size = 4 by 3, horizontal sep=50pt, vertical sep=65pt},
+            group style = {group size = 3 by 4, horizontal sep=50pt, vertical sep=65pt},
             grid=major,
             grid style={line width=.1pt, draw=gray!10},
             major grid style={line width=.2pt, draw=gray!50},
@@ -49,80 +49,80 @@
         \addlegendimage{blue, mark = square}
         \addlegendimage{green, mark = o}
         
-        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 1] {../../../results/Simulation/SIMULATION_Low_Latency.out};
-        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 1] {../../../data/Model/MinLatency/MM1};
-        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 1] {../../../data/Model/MinLatency/NoIterations};
-        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 1] {../../../data/Model/MinLatency/Iterative};
+        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 1] {./model/Simulation/SIMULATION_Low_Latency.out};
+        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 1] {./model/MinLatency/MM1};
+        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 1] {./model/MinLatency/NoIterations};
+        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 1] {./model/MinLatency/Iterative};
         
         \coordinate (c1) at (rel axis cs:0,1);
         
         \nextgroupplot[title=Minimum packet loss,xlabel=Service arrival rate (req./ms), ylabel=, ymax=8]
-        \addplot [black, line width=2pt, mark = none, mark size = 4pt] table[x index = 0, y index = 1] {../../../results/Simulation/SIMULATION_Low_PacketLoss.out};
-        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 1] {../../../data/Model/MinPacketLoss/MM1};
-        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 1] {../../../data/Model/MinPacketLoss/NoIterations};
-        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 1] {../../../data/Model/MinPacketLoss/Iterative};
+        \addplot [black, line width=2pt, mark = none, mark size = 4pt] table[x index = 0, y index = 1] {./model/Simulation/SIMULATION_Low_PacketLoss.out};
+        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 1] {./model/MinPacketLoss/MM1};
+        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 1] {./model/MinPacketLoss/NoIterations};
+        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 1] {./model/MinPacketLoss/Iterative};
         
         \nextgroupplot[title=Minimum energy,xlabel=Service arrival rate (req./ms), ylabel=, ymax=14]
-        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 1] {../../../results/Simulation/SIMULATION_Low_Energy.out};
-        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 1] {../../../data/Model/MinEnergy/MM1};
-        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 1] {../../../data/Model/MinEnergy/NoIterations};
-        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 1] {../../../data/Model/MinEnergy/Iterative};
+        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 1] {./model/Simulation/SIMULATION_Low_Energy.out};
+        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 1] {./model/MinEnergy/MM1};
+        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 1] {./model/MinEnergy/NoIterations};
+        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 1] {./model/MinEnergy/Iterative};
         
         \nextgroupplot[title=Balanced,xlabel=Service arrival rate (req./ms), ylabel=, ymax=10]
-        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 1] {../../../results/Simulation/SIMULATION_Balanced.out};
-        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 1] {../../../data/Model/Balanced/MM1};
-        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 1] {../../../data/Model/Balanced/NoIterations};
-        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 1] {../../../data/Model/Balanced/Iterative};
+        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 1] {./model/Simulation/SIMULATION_Balanced.out};
+        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 1] {./model/Balanced/MM1};
+        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 1] {./model/Balanced/NoIterations};
+        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 1] {./model/Balanced/Iterative};
         
         % Packet Loss
         \nextgroupplot[title=,xlabel=Service arrival rate (req./ms), ylabel=Packet loss (\%), ylabel shift = 6 pt]
-        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 2] {../../../results/Simulation/SIMULATION_Low_Latency.out};
-        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 2] {../../../data/Model/MinLatency/MM1};
-        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 2] {../../../data/Model/MinLatency/NoIterations};
-        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 2] {../../../data/Model/MinLatency/Iterative};
+        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 2] {./model/Simulation/SIMULATION_Low_Latency.out};
+        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 2] {./model/MinLatency/MM1};
+        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 2] {./model/MinLatency/NoIterations};
+        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 2] {./model/MinLatency/Iterative};
         
         \nextgroupplot[title=,xlabel=Service arrival rate (req./ms), ylabel=]
-        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 2] {../../../results/Simulation/SIMULATION_Low_PacketLoss.out};
-        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 2] {../../../data/Model/MinPacketLoss/MM1};
-        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 2] {../../../data/Model/MinPacketLoss/NoIterations};
-        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 2] {../../../data/Model/MinPacketLoss/Iterative};
+        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 2] {./model/Simulation/SIMULATION_Low_PacketLoss.out};
+        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 2] {./model/MinPacketLoss/MM1};
+        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 2] {./model/MinPacketLoss/NoIterations};
+        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 2] {./model/MinPacketLoss/Iterative};
         
         \nextgroupplot[title=,xlabel=Service arrival rate (req./ms), ylabel=, ymax=1.1]
-        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 2] {../../../results/Simulation/SIMULATION_Low_Energy.out};
-        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 2] {../../../data/Model/MinEnergy/MM1};
-        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 2] {../../../data/Model/MinEnergy/NoIterations};
-        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 2] {../../../data/Model/MinEnergy/Iterative};
+        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 2] {./model/Simulation/SIMULATION_Low_Energy.out};
+        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 2] {./model/MinEnergy/MM1};
+        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 2] {./model/MinEnergy/NoIterations};
+        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 2] {./model/MinEnergy/Iterative};
         
         \nextgroupplot[title=,xlabel=Service arrival rate (req./ms), ylabel=, ymax=1.1]
-        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 2] {../../../results/Simulation/SIMULATION_Balanced.out};
-        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 2] {../../../data/Model/Balanced/MM1};
-        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 2] {../../../data/Model/Balanced/NoIterations};
-        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 2] {../../../data/Model/Balanced/Iterative};
+        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 2] {./model/Simulation/SIMULATION_Balanced.out};
+        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 2] {./model/Balanced/MM1};
+        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 2] {./model/Balanced/NoIterations};
+        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 2] {./model/Balanced/Iterative};
         
         % Energy
         \nextgroupplot[title=,xlabel=Service arrival rate (req./ms), ylabel=Energy (kW/h), scaled y ticks=base 10:-3, ymax=20000]
-        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 3] {../../../results/Simulation/SIMULATION_Low_Latency.out};
-        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 3] {../../../data/Model/MinLatency/MM1};
-        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3, mark phase = 3] table[x index = 0, y index = 3] {../../../data/Model/MinLatency/NoIterations};
-        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 3] {../../../data/Model/MinLatency/Iterative};
+        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 3] {./model/Simulation/SIMULATION_Low_Latency.out};
+        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 3] {./model/MinLatency/MM1};
+        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3, mark phase = 3] table[x index = 0, y index = 3] {./model/MinLatency/NoIterations};
+        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 3] {./model/MinLatency/Iterative};
         
         \nextgroupplot[title=,xlabel=Service arrival rate (req./ms), ylabel=, scaled y ticks=base 10:-3, ymax=20000]
-        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 3] {../../../results/Simulation/SIMULATION_Low_PacketLoss.out};
-        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 3] {../../../data/Model/MinPacketLoss/MM1};
-        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 3] {../../../data/Model/MinPacketLoss/NoIterations};
-        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 3] {../../../data/Model/MinPacketLoss/Iterative};
+        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 3] {./model/Simulation/SIMULATION_Low_PacketLoss.out};
+        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 3] {./model/MinPacketLoss/MM1};
+        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 3] {./model/MinPacketLoss/NoIterations};
+        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 3] {./model/MinPacketLoss/Iterative};
         
         \nextgroupplot[title=,xlabel=Service arrival rate (req./ms), ylabel=, scaled y ticks=base 10:-3, ymax=3500]
-        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 3] {../../../results/Simulation/SIMULATION_Low_Energy.out};
-        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 3] {../../../data/Model/MinEnergy/MM1};
-        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 3] {../../../data/Model/MinEnergy/NoIterations};
-        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 3] {../../../data/Model/MinEnergy/Iterative};
+        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 3] {./model/Simulation/SIMULATION_Low_Energy.out};
+        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 3] {./model/MinEnergy/MM1};
+        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 3] {./model/MinEnergy/NoIterations};
+        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 3] {./model/MinEnergy/Iterative};
         
         \nextgroupplot[title=,xlabel=Service arrival rate (req./ms), ylabel=, scaled y ticks=base 10:-3, ymax=7000]
-        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 3] {../../../results/Simulation/SIMULATION_Balanced.out};
-        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 3] {../../../data/Model/Balanced/MM1};
-        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 3] {../../../data/Model/Balanced/NoIterations};
-        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 3] {../../../data/Model/Balanced/Iterative};
+        \addplot [black, mark = none, mark size = 4pt] table[x index = 0, y index = 3] {./model/Simulation/SIMULATION_Balanced.out};
+        \addplot [green, mark = o, mark size = 4pt, mark repeat=14, mark phase = 1] table[x index = 0, y index = 3] {./model/Balanced/MM1};
+        \addplot [blue, mark = square, mark size = 4pt, mark repeat=14, mark phase = 3] table[x index = 0, y index = 3] {./model/Balanced/NoIterations};
+        \addplot [red, mark = diamond, mark size = 4pt, mark repeat=14, mark phase = 5] table[x index = 0, y index = 3] {./model/Balanced/Iterative};
         
         \coordinate (c2) at (rel axis cs:1,1);
         

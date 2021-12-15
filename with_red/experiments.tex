@@ -85,7 +85,7 @@ Likewise, these results also demonstrate the drawbacks of the commonly used M/M/
 
 \begin{figure*}[t!]
     \centering
-    \includegraphics[width=\textwidth]{graphs/general/model_sim-crop}
+    \includegraphics[width=\linewidth]{graphs/general/model_sim-crop}
     \caption{Comparison results of three different metrics estimated by our proposed model against the other two queueing models.}
     \label{fig:model_sim}
 \end{figure*}
@@ -107,7 +107,7 @@ The results of this test are illustrated in~\pref{fig:moea_comparison}. We found
 
 \begin{figure}[t!]
     \centering
-    \includegraphics[width=\columnwidth]{graphs/moeas/comparison-crop}
+    \includegraphics[width=\linewidth]{graphs/moeas/comparison-crop}
     \caption{Inter-quartile range of the HV for different MOEAs.}
     \label{fig:moea_comparison}
 \end{figure}
@@ -145,78 +145,6 @@ From the results shown in Figs.~\ref{fig:model_objectives} and~\ref{fig:model_be
 Specifically, populations obtained with the M/M/1 queueing model have poor diversity. This can be attributed to the inability of the M/M/1 queueing model to distinguish solutions by the latency or packet loss metrics. In particular, most solutions obtained by using the M/M/1 queueing model have an infinite latency and no packet loss. This is because if the arrival rate at any data center component is larger than the service rate, the waiting time at that component tends towards infinity. Hence the average latency also tends towards infinity. As all solutions have the same latency and packet loss, the optimization algorithm can only distinguish solutions based on their energy consumption. As a result, only solutions with low energy consumption survive.
 
 For a similar reason, the surrogate models also failed to produce diverse solutions. Despite their differences, none of the surrogate models provide any incentive to vary the number of service instances. For example, both the CWTPL and PLUS models benefit from shorter average routes. However, increasing the number of service instances will also increase the number of servers yet is unlikely to decrease the average service length. Likewise, for the RU model, increasing the number of service instances increases the energy consumption and makes it more difficult for the algorithm to find servers with a low resource utilization.
-
-% \begin{figure*}[t!]
-%     \centering
-
-%     \begin{subfigure}[b]{0.24\linewidth}
-%         \includegraphics[width=\textwidth]{graphs/model/proposed-crop}
-%         \caption{Proposed}
-%     \end{subfigure}
-%     \begin{subfigure}[b]{0.24\linewidth}
-%         \includegraphics[width=\textwidth]{graphs/model/mm1k-crop}
-%         \caption{M/M/1/$B_c$}
-%     \end{subfigure}
-%     \begin{subfigure}[b]{0.24\linewidth}
-%         \includegraphics[width=\textwidth]{graphs/model/mm1-crop}
-%         \caption{M/M/1}
-%     \end{subfigure}
-%     \begin{subfigure}[b]{0.24\linewidth}
-%         \includegraphics[width=\textwidth]{graphs/model/constant_energy-crop}
-%         \caption{CWTPL}
-%     \end{subfigure}
-
-%     \vspace{1em}
-
-%     \hspace{7em}
-%     \begin{subfigure}[b]{0.24\linewidth}
-%         \includegraphics[width=\textwidth]{graphs/model/resources_energy-crop}
-%         \caption{RU}
-%     \end{subfigure}
-%     \hfill
-%     \begin{subfigure}[b]{0.24\linewidth}
-%         \includegraphics[width=\textwidth]{graphs/model/length_used-crop}
-%         \caption{PLUS}
-%     \end{subfigure}
-%     \hspace{6em}
-
-%     \vspace{1em}
-%     \caption{\textcolor{red}{Non-dominated front found by our algorithm when different models are used as the objective function.}}
-%     \label{fig:model_objectives}
-% \end{figure*}
-
-% \begin{figure*}[t!]
-%     \centering
-
-%     \begin{subfigure}[b]{0.16\linewidth}
-%         \includegraphics[width=\textwidth]{graphs/model/proposed-crop}
-%         \caption{Proposed}
-%     \end{subfigure}
-%     \begin{subfigure}[b]{0.16\linewidth}
-%         \includegraphics[width=\textwidth]{graphs/model/mm1k-crop}
-%         \caption{M/M/1/$B_c$}
-%     \end{subfigure}
-%     \begin{subfigure}[b]{0.16\linewidth}
-%         \includegraphics[width=\textwidth]{graphs/model/mm1-crop}
-%         \caption{M/M/1}
-%     \end{subfigure}
-%     \begin{subfigure}[b]{0.16\linewidth}
-%         \includegraphics[width=\textwidth]{graphs/model/constant_energy-crop}
-%         \caption{CWTPL}
-%     \end{subfigure}
-%     \begin{subfigure}[b]{0.16\linewidth}
-%         \includegraphics[width=\textwidth]{graphs/model/resources_energy-crop}
-%         \caption{RU}
-%     \end{subfigure}
-%     \begin{subfigure}[b]{0.16\linewidth}
-%         \includegraphics[width=\textwidth]{graphs/model/length_used-crop}
-%         \caption{PLUS}
-%     \end{subfigure}
-%     \vspace{1em}
-%     \caption{\textcolor{red}{Non-dominated front found by our algorithm when different models are used as the objective function.}}
-%     \label{fig:model_objectives}
-% \end{figure*}
-
 
 \begin{figure}[t!]
     \centering
