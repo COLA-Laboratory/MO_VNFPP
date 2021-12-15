@@ -1,0 +1,43 @@
+\documentclass[a4paper]{standalone}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+            footnotesize,
+            width=.8\textwidth,
+            height=0.5\textwidth,
+            symbolic x coords={432,1024,2000,3456,5488,8192},
+            xlabel = {Number of servers},
+            xtick = data,
+            xtick pos=left,
+            major x tick style = {opacity=0},
+            minor x tick num = 1,
+            xminorgrids,
+            ylabel = {Normalized HV},
+            ylabel style={
+                    yshift=-2ex,
+                },
+            ybar=\pgflinewidth,
+            ymin = 0,
+            area legend,
+            bar width=8pt,
+            legend pos=outer north east,
+            legend cell align={left},
+            legend columns = 1,
+            line width = 1pt,
+        ]
+
+        \addplot [red, postaction={pattern=north east lines, pattern color=red!60}, fill=red!30, error bars/.cd,x dir=both, error bar style={line width=1pt}, x explicit,y dir=both, y explicit] table[x index = 0, y index = 2, col sep = comma, y error minus index = 1, y error plus index = 3]  {../../../processed/initialisation/ca.csv};
+
+        \addplot [blue, postaction={pattern=crosshatch dots, pattern color=blue!60}, fill=blue!30, error bars/.cd,x dir=both, error bar style={line width=1pt}, x explicit,y dir=both, y explicit] table[x index = 0, y index = 2, col sep = comma, y error minus index = 1, y error plus index = 3]  {../../../processed/initialisation/uni.csv};
+
+        \addplot [green, postaction={pattern=crosshatch, pattern color=green!60}, fill=green!20, error bars/.cd,x dir=both, x explicit, y dir=both, error bar style={line width=1pt}, y explicit] table[x index = 0, y index = 2, col sep = comma, y error minus index = 1, y error plus index = 3]  {../../../processed/initialisation/std.csv};
+
+        \legend{Tailored, Uniform, Generic}
+    \end{axis}
+\end{tikzpicture}
+\end{document}
